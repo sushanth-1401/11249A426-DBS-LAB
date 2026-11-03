@@ -1,0 +1,46 @@
+mysql> SELECT COUNT(*) AS total_employees FROM emp;
++-----------------+
+| total_employees |
++-----------------+
+|               6 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT SUM(salary) AS total_payroll, ROUND(AVG(salary),2) AS avg_salary FROM emp;
++---------------+------------+
+| total_payroll | avg_salary |
++---------------+------------+
+|     317000.00 |   52833.33 |
++---------------+------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT dept_id, COUNT(*) AS headcount, ROUND(AVG(salary),2) AS avg_salary FROM emp GROUP BY dept_id;
++---------+-----------+------------+
+| dept_id | headcount | avg_salary |
++---------+-----------+------------+
+|       1 |         2 |   58500.00 |
+|       2 |         2 |   59500.00 |
+|       3 |         2 |   40500.00 |
++---------+-----------+------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT ROUND(3.14159,2), CEIL(4.1), FLOOR(4.9), ABS(-250), MOD(10,3), POWER(2,8), SQRT(144);
++------------------+----------+-----------+-----------+-----------+------------+-----------+
+| ROUND(3.14159,2) | CEIL(4.1)| FLOOR(4.9)| ABS(-250) | MOD(10,3) | POWER(2,8) | SQRT(144) |
++------------------+----------+-----------+-----------+-----------+------------+-----------+
+|             3.14 |        5 |         4 |       250 |         1 |        256 |   12.0000 |
++------------------+----------+-----------+-----------+-----------+------------+-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT e.emp_name, e.salary, d.dept_name, d.hod FROM emp e INNER JOIN dept d ON e.dept_id = d.dept_id;
++----------+----------+-----------+------------+
+| emp_name | salary   | dept_name | hod        |
++----------+----------+-----------+------------+
+| Priya    | 55000.00 | CSE       | Dr. Sharma |
+| Arjun    | 62000.00 | CSE       | Dr. Sharma |
+| Kavya    | 48000.00 | ECE       | Dr. Patel  |
+| Ravi     | 71000.00 | ECE       | Dr. Patel  |
+| Deepika  | 43000.00 | MECH      | Dr. Kumar  |
+| Siva     | 38000.00 | MECH      | Dr. Kumar  |
++----------+----------+-----------+------------+
+6 rows in set (0.00 sec)

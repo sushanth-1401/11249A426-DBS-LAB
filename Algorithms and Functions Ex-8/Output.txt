@@ -1,0 +1,43 @@
+C:\DBS\Ex8> python des.py
+DES Encryption Demo
+Plaintext  : Hello DES Algorithm!
+Key        : b'8BYTEKEY'
+Ciphertext : f67d86523fd1ffc779b57898d1a3e55fc524940b310b807c416de383e4088fa7
+Decrypted  : Hello DES Algorithm!
+
+C:\DBS\Ex8> python rsa.py
+=== Manual RSA (p=61, q=53) ===
+  p=61, q=53, n=3233, phi=3120
+  Public Key  (e=17, n=3233)
+  Private Key (d=2753, n=3233)
+  Message=65  Ciphertext=2790  Decrypted=65
+
+=== RSA with 2048-bit keys (Library) ===
+  Original  : RSA Encryption Test - SCSVMV
+  Encrypted : 3c5cd3fe08f630b09ca7ea3f8013528914d39adb...
+  Decrypted : RSA Encryption Test - SCSVMV
+
+C:\DBS\Ex8> python diffie_hellman.py
+Diffie-Hellman Key Exchange
+  Public prime (p)  : 23
+  Generator  (g)   : 5
+  Alice private (a): 6  Public A: 8
+  Bob   private (b): 15  Public B: 19
+  Alice shared key : 2
+  Bob   shared key : 2
+  Keys Match       : True
+
+C:\DBS\Ex8> python hash_functions.py
+Message : SCSVMV University
+MD5     : 87c7292f4d35f6a5b2ab1e20dbd1bde9  (128 bits)
+SHA-1   : e154b8a96ba0ac17cda4b218ea2bda0deb55e736  (160 bits)
+SHA-256 : b958376e3f629e68660e8aa82308fdb496eabd4aa7f6bd9c16c30f08e1f0f26f  (256 bits)
+
+File integrity check:
+Original MD5 : 357b77b8f2cbd4f9ea36d50c4281f9e4
+Tampered MD5 : bad3621d925ba13b9c3079c095ae64f8
+Integrity OK : False
+
+Avalanche Effect (tiny change → huge hash change):
+SHA1('Hello') = f7ff9e8b7bb2e09b70935a5d785e0cc5d9d0abf0
+SHA1('hello') = aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d

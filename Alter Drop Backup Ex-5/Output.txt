@@ -1,0 +1,45 @@
+mysql> ALTER TABLE Student ADD COLUMN phone VARCHAR(15);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Student ADD COLUMN gender CHAR(1) AFTER name;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Student MODIFY COLUMN name VARCHAR(100) NOT NULL;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Student CHANGE COLUMN phone mobile VARCHAR(12);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Student DROP COLUMN gender;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC Student;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| student_id | int          | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(100) | NO   |     | NULL    |                |
+| email      | varchar(80)  | YES  | UNI | NULL    |                |
+| dept_id    | int          | NO   | MUL | NULL    |                |
+| cgpa       | decimal(4,2) | YES  |     | 0.00    |                |
+| join_date  | date         | YES  |     | NULL    |                |
+| mobile     | varchar(12)  | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+7 rows in set (0.01 sec)
+
+mysql> TRUNCATE TABLE Student_Basic;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> DROP TABLE IF EXISTS Student_Basic;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> RENAME TABLE Student TO BEStudents;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> ALTER TABLE BEStudents RENAME TO Student;
+Query OK, 0 rows affected (0.01 sec)

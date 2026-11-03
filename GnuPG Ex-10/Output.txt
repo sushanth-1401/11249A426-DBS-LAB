@@ -1,0 +1,15 @@
+C:\> gpg --list-keys
+pub   rsa4096 2025-01-15 [SC]
+      A1B2C3D4E5F67890AABBCCDDEEFF001122334455
+uid           [ultimate] Alice <alice@scsvmv.edu>
+sub   rsa4096 2025-01-15 [E]
+
+C:\> gpg --decrypt secret.txt.asc
+gpg: encrypted with 4096-bit RSA key, ID 22334455, created 2025-01-15
+      "Alice <alice@scsvmv.edu>"
+Confidential: Student grade sheet for CSE batch
+
+C:\> gpg --verify document.pdf.asc document.pdf
+gpg: Signature made Thu 15 Jan 2025 10:30:00 IST
+gpg:                using RSA key A1B2C3D4E5F67890
+gpg: Good signature from "Alice <alice@scsvmv.edu>" [ultimate]

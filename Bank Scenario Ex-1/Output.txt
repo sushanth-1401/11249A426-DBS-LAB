@@ -1,0 +1,35 @@
+mysql> SOURCE bank_schema.sql;
+Query OK, 0 rows affected (0.03 sec)
+Query OK, 0 rows affected (0.02 sec)
+Query OK, 0 rows affected (0.04 sec)
+Query OK, 0 rows affected (0.03 sec)
+Query OK, 0 rows affected (0.02 sec)
+Query OK, 0 rows affected (0.03 sec)
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> SHOW TABLES;
++----------------+
+| Tables_in_Bank |
++----------------+
+| Account        |
+| Branch         |
+| Customer       |
+| Customer_Loan  |
+| Employee       |
+| Loan           |
+| Transactions   |
++----------------+
+7 rows in set (0.00 sec)
+
+mysql> DESC Account;
++--------------+---------------------------+------+-----+---------+-------+
+| Field        | Type                      | Null | Key | Default | Extra |
++--------------+---------------------------+------+-----+---------+-------+
+| account_no   | int                       | NO   | PRI | NULL    |       |
+| account_type | enum('Savings','Current') | NO   |     | NULL    |       |
+| balance      | decimal(12,2)             | YES  |     | 0.00    |       |
+| open_date    | date                      | YES  |     | NULL    |       |
+| customer_id  | int                       | YES  | MUL | NULL    |       |
+| branch_id    | int                       | YES  | MUL | NULL    |       |
++--------------+---------------------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)

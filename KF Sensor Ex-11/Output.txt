@@ -1,0 +1,28 @@
+C:\DBS\Ex11> python honeypot_test.py
+Testing honeypot at 192.168.1.50
+Time: 2025-01-15 10:30:45.112340
+----------------------------------------
+Port    21: OPEN  | Banner: 220 FTP Server Ready
+Port    22: OPEN  | Banner: SSH-2.0-OpenSSH_7.4
+Port    23: OPEN  | Banner: Welcome to Telnet
+Port    25: OPEN  | Banner: 220 SMTP Server
+Port    80: OPEN  | Banner: HTTP/1.1 200 OK
+Port   110: OPEN  | Banner: +OK POP3 Server
+Port  3306: OPEN  | Banner: J 5.7.32-MySQL Community
+
+C:\DBS\Ex11> python log_analysis.py
+Total Events Logged: 10
+
+Top 5 Attacker IPs:
+  185.234.1.22         : 4 attempts
+  103.21.5.88          : 2 attempts
+  45.142.3.7           : 2 attempts
+  91.108.9.15          : 1 attempts
+  172.58.4.3           : 1 attempts
+
+Most Targeted Services:
+  SSH        : 3 connections
+  HTTP       : 3 connections
+  FTP        : 2 connections
+  MySQL      : 1 connections
+  SMTP       : 1 connections

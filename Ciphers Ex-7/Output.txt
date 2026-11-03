@@ -1,0 +1,35 @@
+C:\DBS\Ex7> python caesar.py
+Plaintext  : HELLO WORLD
+Key        : 3
+Ciphertext : KHOOR ZRUOG
+Decrypted  : HELLO WORLD
+
+C:\DBS\Ex7> python playfair.py
+Plaintext  : INSTRUMENTS
+Key        : MONARCHY
+Ciphertext : GATLMZCLRQXA
+Decrypted  : INSTRUMENTSX
+
+C:\DBS\Ex7> python hill.py
+Plaintext  : HELP
+Key Matrix : [[3, 3], [2, 5]]
+Ciphertext : HIAT
+Decrypted  : HELP
+
+C:\DBS\Ex7> python vigenere.py
+Plaintext  : ATTACK AT DAWN
+Key        : LEMON
+Ciphertext : LXFOPV EF RNHR
+Decrypted  : ATTACK AT DAWN
+
+C:\DBS\Ex7> python rail_fence.py
+Plaintext  : WEAREDISCOVEREDFLEEATONCE
+Rails      : 3
+Ciphertext : WECRLTEERDSOEEFEAOCAIVDEN
+Decrypted  : WEAREDISCOVEREDFLEEATONCE
+
+Row-Column Transposition:
+Plaintext  : ATTACKPOSTPONEDUNTILTWOAM
+Key        : ZEBRAS
+Ciphertext : CPNOXTSDTXTOELXATUWXKOTAXAPNIM
+Decrypted  : ATTACKPOSTPONEDUNTILTWOAMXXXXX

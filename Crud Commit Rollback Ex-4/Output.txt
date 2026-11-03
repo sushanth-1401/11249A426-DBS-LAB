@@ -1,0 +1,73 @@
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| CollegeDB          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> USE CollegeDB;
+Database changed
+
+mysql> SHOW TABLES;
++---------------------+
+| Tables_in_CollegeDB |
++---------------------+
+| Student             |
+| Student_Basic       |
++---------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM Student;
++------------+-----------+------------------+---------+------+------------+
+| student_id | name      | email            | dept_id | cgpa | join_date  |
++------------+-----------+------------------+---------+------+------------+
+|          1 | Priya S   | priya@mail.com   |       1 | 9.20 | 2025-01-15 |
+|          2 | Arjun K   | arjun@mail.com   |       2 | 8.70 | 2025-01-15 |
+|          3 | Deepika R | deepika@mail.com |       1 | 9.50 | 2025-01-15 |
+|          4 | Ravi M    | ravi@mail.com    |       3 | 7.80 | 2025-01-15 |
+|          5 | Kavya P   | kavya@mail.com   |       1 | 8.90 | 2025-01-15 |
++------------+-----------+------------------+---------+------+------------+
+5 rows in set (0.00 sec)
+
+mysql> UPDATE Student SET cgpa = 9.0 WHERE name = 'Ravi M';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> DELETE FROM Student WHERE student_id = 5;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> START TRANSACTION;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> INSERT INTO Student (name, email, dept_id, cgpa) VALUES ('Test', 'test@m.com', 1, 5.0);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> COMMIT;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> START TRANSACTION;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> UPDATE Student SET cgpa = 0.0 WHERE dept_id = 1;
+Query OK, 3 rows affected (0.00 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql> ROLLBACK;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SELECT * FROM Student;
++------------+-----------+------------------+---------+------+------------+
+| student_id | name      | email            | dept_id | cgpa | join_date  |
++------------+-----------+------------------+---------+------+------------+
+|          1 | Priya S   | priya@mail.com   |       1 | 9.20 | 2025-01-15 |
+|          2 | Arjun K   | arjun@mail.com   |       2 | 8.70 | 2025-01-15 |
+|          3 | Deepika R | deepika@mail.com |       1 | 9.50 | 2025-01-15 |
+|          4 | Ravi M    | ravi@mail.com    |       3 | 9.00 | 2025-01-15 |
+|          6 | Test      | test@m.com       |       1 | 5.00 | 2025-01-15 |
++------------+-----------+------------------+---------+------+------------+
+5 rows in set (0.00 sec)

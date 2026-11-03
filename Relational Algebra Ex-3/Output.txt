@@ -1,0 +1,19 @@
+Q1: σ dept_id="CSE" (STUDENT)
+
+Q2: π name, cgpa (STUDENT)
+
+Q3: σ (dept_id="CSE" ∧ cgpa>8.0) (STUDENT)
+
+Q4: π name (σ course_id="CS301" (STUDENT ⋈ ENROLLMENT))
+
+Q5: STUDENT ⋈ ENROLLMENT
+
+Q6: σ credits=3 (COURSE)
+
+Q7: π student_id (STUDENT) − π student_id (ENROLLMENT)
+
+Q8: ρ S (STUDENT)
+
+Q9: σ dept_id="CSE" (COURSE) ∪ σ dept_id="ECE" (COURSE)
+
+Q10: π name (σ credits>3 (STUDENT ⋈ ENROLLMENT ⋈ COURSE))

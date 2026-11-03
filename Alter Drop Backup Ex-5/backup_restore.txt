@@ -1,0 +1,12 @@
+mysqldump -u root -p CollegeDB > college_backup.sql
+mysqldump -u root -p CollegeDB Student Course > tables_backup.sql
+mysqldump -u root -p --all-databases > all_backup.sql
+mysqldump -u root -p --no-data CollegeDB > schema_only.sql
+mysqldump -u root -p --no-create-info CollegeDB > data_only.sql
+
+mysql -u root -p CollegeDB < college_backup.sql
+mysql -u root -p -e "CREATE DATABASE CollegeDB_New;"
+mysql -u root -p CollegeDB_New < college_backup.sql
+
+USE CollegeDB;
+SOURCE /path/to/college_backup.sql;

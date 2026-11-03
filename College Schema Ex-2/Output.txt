@@ -1,0 +1,33 @@
+mysql> SOURCE college_schema.sql;
+Query OK, 0 rows affected (0.02 sec)
+Query OK, 0 rows affected (0.03 sec)
+Query OK, 0 rows affected (0.02 sec)
+Query OK, 0 rows affected (0.03 sec)
+Query OK, 0 rows affected (0.04 sec)
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> SHOW TABLES;
++---------------------+
+| Tables_in_CollegeDB |
++---------------------+
+| Course              |
+| Department          |
+| Enrollment          |
+| Faculty             |
+| Student             |
+| Teaches             |
++---------------------+
+6 rows in set (0.00 sec)
+
+mysql> DESC Student;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| student_id | int          | NO   | PRI | NULL    |       |
+| name       | varchar(50)  | NO   |     | NULL    |       |
+| dob        | date         | YES  |     | NULL    |       |
+| phone      | varchar(15)  | YES  |     | NULL    |       |
+| dept_id    | int          | YES  | MUL | NULL    |       |
+| cgpa       | decimal(4,2) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)

@@ -1,0 +1,34 @@
+STUDENT(student_id, name, dept_id, cgpa)
+COURSE(course_id, title, dept_id, credits)
+ENROLLMENT(student_id, course_id, semester, grade)
+FACULTY(faculty_id, name, dept_id, salary)
+
+Q1: Select all students from dept CSE
+    σ dept_id = "CSE" (STUDENT)
+
+Q2: Project only student name and cgpa
+    π name, cgpa (STUDENT)
+
+Q3: Students with CGPA > 8.0 in CSE
+    σ (dept_id="CSE" ∧ cgpa>8.0) (STUDENT)
+
+Q4: Names of students enrolled in CS301
+    π name (σ course_id="CS301" (STUDENT ⋈ ENROLLMENT))
+
+Q5: Natural Join of STUDENT and ENROLLMENT
+    STUDENT ⋈ ENROLLMENT
+
+Q6: All courses with 3 credits
+    σ credits=3 (COURSE)
+
+Q7: Students NOT enrolled in any course
+    π student_id (STUDENT) − π student_id (ENROLLMENT)
+
+Q8: Rename STUDENT to S
+    ρ S (STUDENT)
+
+Q9: Courses offered by CSE OR ECE departments
+    σ dept_id="CSE" (COURSE) ∪ σ dept_id="ECE" (COURSE)
+
+Q10: Students enrolled in courses with > 3 credits
+    π name (σ credits>3 (STUDENT ⋈ ENROLLMENT ⋈ COURSE))

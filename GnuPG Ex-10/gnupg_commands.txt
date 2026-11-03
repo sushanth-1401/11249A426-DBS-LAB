@@ -1,0 +1,23 @@
+gpg --gen-key
+gpg --list-keys
+gpg --list-secret-keys
+gpg --armor --export alice@scsvmv.edu > alice_public.asc
+gpg --import bob_public.asc
+gpg --fingerprint alice@scsvmv.edu
+
+echo Confidential: Student grade sheet for CSE batch > secret.txt
+gpg --encrypt --recipient bob@scsvmv.edu --armor secret.txt
+gpg --symmetric --cipher-algo AES256 --armor secret.txt
+gpg --decrypt --output decrypted_secret.txt secret.txt.asc
+gpg --decrypt secret.txt.asc > decrypted.txt
+
+gpg --encrypt --sign --recipient bob@scsvmv.edu --local-user alice@scsvmv.edu --armor secret.txt
+gpg --decrypt --output received.txt secret.txt.asc
+
+gpg --detach-sign --armor --local-user alice@scsvmv.edu document.pdf
+gpg --verify document.pdf.asc document.pdf
+gpg --clearsign --local-user alice@scsvmv.edu message.txt
+gpg --verify message.txt.asc
+gpg --edit-key bob@scsvmv.edu
+gpg --gen-revoke alice@scsvmv.edu > revoke.asc
+gpg --import revoke.asc

@@ -1,0 +1,22 @@
+C:\DBS\Ex9> python dss.py
+[*] Generating 1024-bit DSA key pair...
+[+] Key pair generated successfully
+
+Original Message  : Transfer Rs. 50000 from Account 101 to Account 202
+Signature (hex)   : b7f9a1f1c183f70004685ee24c1d8b9e30f76dcf...
+
+[✓] Signature Valid  : True
+[✗] Tampered Valid   : False
+
+Private Key (PEM):
+-----BEGIN PRIVATE KEY-----
+MIIBSgIBADCCASsGByqGSM44BAEwggEeAoGBAJNaJYv6k9HSoE/n...
+
+Public Key (PEM):
+-----BEGIN PUBLIC KEY-----
+MIIBtzCCASsGByqGSM44BAEwggEeAoGBAJNaJYv6k9HSoE/nry2ei...
+
+=== RSA Digital Signature ===
+Message   : Transfer Rs. 50000 from Accoun...
+Signature : 65be77d2a5a63ab16b860ccf01cdf095904127d6...
+Verification: VALID [✓]
